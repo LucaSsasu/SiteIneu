@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depuneți o Plângere | Ineu, Județul Arad, România</title>
+</head>
+<body>
+  <header>
+    <link rel="stylesheet" href="plangeri.css">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">Ineu<span class="flag-accent"></span></a>
+        <div class="nav-links">
+          <a href="index.html">Acasă</a>
+          <a href="history.html">Istorie</a>
+          <a href="culture.html">Cultură</a>
+          <a href="propuneri.html">Plangeri</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+      </nav>
+    </div>
+  </header>
+  <div class="page-header">
+    <div class="page-header-content">
+      <h1>Depuneți o Plângere</h1>
+      <p>Ajutați-ne să ne îmbunătățim serviciile împărtășindu-ne preocupările dumneavoastră administrației orașului</p>
+    </div>
+  </div>
+  <div class="breadcrumb">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li>Depuneți o Plângere</li>
+      </ul>
+    </div>
+  </div>
+  <section class="form-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Vocea Dumneavoastră Contează</h2>
+        <p>Suntem dedicați rezolvării problemelor cetățenilor și îmbunătățirii comunității noastre. Vă rugăm să folosiți formularul de mai jos pentru a depune plângerea dumneavoastră, iar echipa noastră va răspunde cât mai curând posibil.</p>
+      </div>
+      <div class="alert alert-success" id="successAlert">
+        Vă mulțumim pentru trimiterea plângerii! Plângerea dumneavoastră a fost primită și va fi procesată de echipa noastră. Un număr de referință a fost trimis pe adresa dumneavoastră de email.
+      </div>
+      <div class="alert alert-danger" id="errorAlert">
+        A apărut o eroare la trimiterea plângerii. Vă rugăm să verificați formularul pentru erori și încercați din nou.
+      </div>
+      <div class="form-container">
+        <form id="complaintForm">
+          <div class="form-section-title">Informații Personale</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstName">Prenume*</label>
+              <input type="text" id="firstName" name="firstName" required>
+              <div class="error-message" id="firstNameError">Vă rugăm să introduceți prenumele dumneavoastră</div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Nume*</label>
+              <input type="text" id="lastName" name="lastName" required>
+              <div class="error-message" id="lastNameError">Vă rugăm să introduceți numele dumneavoastră</div>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresă de Email*</label>
+              <input type="email" id="email" name="email" required>
+              <div class="error-message" id="emailError">Vă rugăm să introduceți o adresă de email validă</div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Număr de Telefon</label>
+              <input type="tel" id="phone" name="phone">
+              <div class="error-message" id="phoneError">Vă rugăm să introduceți un număr de telefon valid</div>
+            </div>
+            <div class="form-group">
+              <label for="address">Adresă</label>
+              <input type="text" id="address" name="address">
+            </div>
+            <div class="form-group">
+              <label for="postalCode">Cod Poștal</label>
+              <input type="text" id="postalCode" name="postalCode">
+            </div>
+          </div>
+          <div class="form-section-title">Detalii ale Plângerii</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="category">Categorie de Plângere*</label>
+              <select id="category" name="category" required>
+                <option value="">Vă rugăm să selectați</option>
+                <option value="roads">Drumuri și Infrastructură</option>
+                <option value="utilities">Utilități și Servicii Publice</option>
+                <option value="waste">Gestionarea Deșeurilor</option>
+                <option value="noise">Poluarea Sonoră</option>
+                <option value="environment">Probleme de Mediu</option>
+                <option value="safety">Siguranță Publică</option>
+                <option value="administration">Servicii Administrative</option>
+                <option value="other">Altele</option>
+              </select>
+              <div class="error-message" id="categoryError">Vă rugăm să selectați o categorie</div>
+            </div>
+            <div class="form-group">
+              <label for="location">Locația Problemei</label>
+              <input type="text" id="location" name="location" placeholder="Strada, reper sau adresă">
+            </div>
+            <div class="form-group full-width">
+              <label for="subject">Subiect*</label>
+              <input type="text" id="subject" name="subject" required placeholder="O descriere scurtă a plângerii">
+              <div class="error-message" id="subjectError">Vă rugăm să introduceți un subiect pentru plângerea dumneavoastră</div>
+            </div>
+            <div class="form-group full-width">
+              <label for="description">Descriere Detaliată*</label>
+              <textarea id="description" name="description" required placeholder="Vă rugăm să oferiți cât mai multe detalii despre problema, inclusiv data și ora dacă este aplicabil"></textarea>
+              <div class="error-message" id="descriptionError">Vă rugăm să furnizați o descriere detaliată</div>
+            </div>
+            <div class="form-group full-width">
+              <label for="solution">Soluție Sugestivă (Opțional)</label>
+              <textarea id="solution" name="solution" placeholder="Dacă aveți sugestii pentru rezolvarea acestei probleme, vă rugăm să le împărtășiți aici"></textarea>
+            </div>
+          </div>
+          <div class="form-section-title">Informații Suplimentare</div>
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="urgency">Nivel de Urgență</label>
+              <select id="urgency" name="urgency">
+                <option value="normal">Normal</option>
+                <option value="urgent">Urgent</option>
+                <option value="emergency">Urgență</option>
+              </select>
+            </div>
+            <div class="form-group full-width" style="margin-bottom: 0;">
+              <label>
+                <input type="checkbox" id="consent" name="consent" required>
+                Sunt de acord cu procesarea datelor mele personale în scopul tratării plângerii mele*
+              </label>
+              <div class="error-message" id="consentError">Trebuie să dați consimțământul pentru a procesa plângerea</div>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <button type="button" class="btn btn-secondary" id="resetBtn">Resetați Formularul</button>
+            <button type="submit" class="btn btn-lg" id="submitBtn">Trimiteți Plângerea</button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h3>Telefon</h3>
+          <p>+40 257 511 550</p>
+          <p>Luni până Vineri, 8:00 AM - 4:00 PM</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <h3>Email</h3>
+          <p>primaria@ineu.ro</p>
+          <p>Ne străduim să răspundem în 48 de ore</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🏢</div>
+          <h3>Primărie</h3>
+          <p>Strada Republicii, Nr. 5</p>
+          <p>Ineu, Județul Arad, România</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Întrebări Frecvente</h2>
+        <p>Răspunsuri la întrebări comune despre procesul de depunere a plângerilor</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Cât de repede va fi procesată plângerea mea?</div>
+          <div class="faq-answer">
+            <p>Echipa noastră își propune să proceseze toate plângerile în termen de 5 zile lucrătoare. Pentru probleme urgente, încercăm să răspundem în 48 de ore. Problemele complexe pot necesita timp suplimentar pentru investigare și rezolvare.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Voi primi actualizări despre plângerea mea?</div>
+          <div class="faq-answer">
+            <p>Da, veți primi un email automat de confirmare cu un număr de referință după ce plângerea dumneavoastră este trimisă. Pe măsură ce plângerea progresează, veți primi actualizări despre starea acesteia. Puteți contacta direct folosind numărul de referință pentru a solicita actualizări.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Ce fac dacă plângerea mea necesită atenție imediată?</div>
+          <div class="faq-answer">
+            <p>Pentru probleme care necesită atenție imediată (cum ar fi riscuri pentru siguranță), vă rugăm să selectați "Urgență" în meniul nivelului de urgență și contactați, de asemenea, linia noastră de urgență la +40 257 511 555.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Cum sunt gestionate datele mele personale?</div>
+          <div class="faq-answer">
+            <p>Datele dumneavoastră personale sunt gestionate în conformitate cu regulamentele GDPR. Colectăm doar informațiile necesare pentru a procesa plângerea și a comunica cu dumneavoastră. Datele nu vor fi partajate cu terțe părți fără consimțământul dumneavoastră, cu excepția cazurilor prevăzute de lege.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>Descoperiți Ineu</h3>
+          <ul>
+            <li><a href="history.html">Istorie</a></li>
+            <li><a href="attractions.html">Atracții</a></li>
+            <li><a href="culture.html">Cultură</a></li>
+            <li><a href="Plangeri.html">Plangeri</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Informații pentru Vizitatori</h3>
+          <ul>
+            <li><a href="#">Cum să ajungeți aici</a></li>
+            <li><a href="#">Cazare</a></li>
+            <li><a href="#">Transport Local</a></li>
+            <li><a href="#">Hărți și Ghiduri</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Conectează-te cu noi</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/groups/1664112280535247/?locale=ro_RO" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/luca_sasu/" target="_blank">Instagram</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Orașul Ineu. Toate Drepturile Rezervate.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Link to external JavaScript -->
+  <script src="js/complaint-form.js"></script>
+</body>
+</html>
